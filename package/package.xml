@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<umbPackage>
+	<files>
+		<file>
+			<guid>Our.Umbraco.Tree.RobotsTxt.dll</guid>
+			<orgPath>/bin</orgPath>
+			<orgName>Our.Umbraco.Tree.RobotsTxt.dll</orgName>
+		</file>
+		<file>
+			<guid>disallow.gif</guid>
+			<orgPath>/umbraco/robots-txt</orgPath>
+			<orgName>disallow.gif</orgName>
+		</file>
+		<file>
+			<guid>editRobotsTxtFile.aspx</guid>
+			<orgPath>/umbraco/robots-txt</orgPath>
+			<orgName>editRobotsTxtFile.aspx</orgName>
+		</file>
+		<file>
+			<guid>lines-comment.gif</guid>
+			<orgPath>/umbraco/robots-txt</orgPath>
+			<orgName>lines-comment.gif</orgName>
+		</file>
+		<file>
+			<guid>lines-uncomment.gif</guid>
+			<orgPath>/umbraco/robots-txt</orgPath>
+			<orgName>lines-uncomment.gif</orgName>
+		</file>
+		<file>
+			<guid>robot.png</guid>
+			<orgPath>/umbraco/robots-txt</orgPath>
+			<orgName>robot.png</orgName>
+		</file>
+		<file>
+			<guid>user-agent.gif</guid>
+			<orgPath>/umbraco/robots-txt</orgPath>
+			<orgName>user-agent.gif</orgName>
+		</file>
+	</files>
+	<info>
+		<package>
+			<name>Robots.txt Editor</name>
+			<version>3.0</version>
+			<license url="http://www.opensource.org/licenses/mit-license.php">MIT license</license>
+			<url>http://our.umbraco.org/projects/developer-tools/robotstxt-editor</url>
+			<requirements>
+				<major>4</major>
+				<minor>5</minor>
+				<patch>0</patch>
+			</requirements>
+		</package>
+		<author>
+			<name>Lee Kelleher</name>
+			<website>http://leekelleher.com</website>
+		</author>
+		<readme>
+			<![CDATA[Adds a tree node to the developer section, which allows access to your Robots.txt file from the root of your website. If you do not have an existing Robots.txt, then one will be created for you.
+
+The editor contains basic validation for the Robots.txt protocol.]]>
+		</readme>
+	</info>
+	<DocumentTypes />
+	<Templates />
+	<Stylesheets />
+	<Macros />
+	<DictionaryItems />
+	<Languages />
+	<DataTypes />
+	<Actions>
+		<Action runat="install" alias="addApplicationTree" silent="false" initialize="true" sortOrder="6" applicationAlias="developer" treeAlias="robotsTxt" treeTitle="Robots.txt" iconOpened="../../robots-txt/robot.png" iconClosed="../../robots-txt/robot.png" assemblyName="Our.Umbraco.Tree.RobotsTxt" treeHandlerType="RobotsTxtTree" action="" />
+	</Actions>
+</umbPackage>
