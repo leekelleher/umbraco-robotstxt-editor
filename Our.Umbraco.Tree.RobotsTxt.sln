@@ -1,7 +1,7 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Our.Umbraco.Tree.RobotsTxt", "Our.Umbraco.Tree.RobotsTxt.csproj", "{1286BAAC-76C2-4D9A-ABBD-2CD8320D3C8B}"
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Our.Umbraco.Tree.RobotsTxt", "Our.Umbraco.Tree.RobotsTxt\Our.Umbraco.Tree.RobotsTxt.csproj", "{1286BAAC-76C2-4D9A-ABBD-2CD8320D3C8B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
