@@ -8,32 +8,12 @@ If you do not have an existing Robots.txt, then one will be created for you. The
 
 ---
 
-## Getting Started
+## Current Status: Support for Umbraco v8
 
-### Installation
+Following on from [issue #4](https://github.com/leekelleher/umbraco-robotstxt-editor/issues/4), work has started to re-develop Robots.txt Editor for Umbraco v8.
 
-> *Note:* Robots.txt Editor has been developed against **Umbraco v4.9.0** and will support that version and above.
+> For historical purposes, you can still view the [`legacy` branch](https://github.com/leekelleher/umbraco-robotstxt-editor/tree/legacy) of this repository, if you wish to reference the original source-code.
 
-Robots.txt Editor can be installed from either Our Umbraco or build manually from the source-code:
-
-#### Our Umbraco package repository
-
-To install from Our Umbraco, please download the package from:
-
-> [https://our.umbraco.org/projects/developer-tools/robotstxt-editor/](https://our.umbraco.org/projects/developer-tools/robotstxt-editor/)
-
-
-#### Manual build
-
-If you prefer, you can compile the project yourself, you'll need:
-
-* Visual Studio 2012 (or above)
-
-To clone it locally click the "Clone in Windows" button above or run the following git commands.
-
-	git clone https://github.com/leekelleher/umbraco-robotstxt-editor.git umbraco-robotstxt-editor
-	cd umbraco-robotstxt-editor
-	._build\BuildPackage.cmd
 
 ---
 
@@ -53,8 +33,17 @@ Have a question?
 * [Raise an issue](https://github.com/leekelleher/umbraco-robotstxt-editor/issues) on GitHub
 
 
+## Dev Team
+
+- [emma burstow](https://github.com/emmaburstow)
+- [Lotte Pitcher](https://github.com/LottePitcher)
+- [Mike Masey](https://github.com/MMasey)
+- [Lee Kelleher](https://github.com/leekelleher)
+
+
 ## License
 
+Copyright &copy; 2019 Our Umbraco and other contributors<br>
 Copyright &copy; 2009 Lee Kelleher
 
 Licensed under the [MIT License](LICENSE.md)
