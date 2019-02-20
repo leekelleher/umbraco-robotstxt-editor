@@ -6,8 +6,6 @@ The Robots.txt Editor for Umbraco adds a tree node to the developer section, whi
 
 If you do not have an existing Robots.txt, then one will be created for you. The editor contains basic validation for the Robots.txt protocol.
 
----
-
 ## Current Status: Support for Umbraco v8
 
 Following on from [issue #4](https://github.com/leekelleher/umbraco-robotstxt-editor/issues/4), work has started to re-develop Robots.txt Editor for Umbraco v8.
@@ -35,7 +33,7 @@ Have a question?
 
 ## Dev Team
 
-- [emma burstow](https://github.com/emmaburstow)
+- [Emma Burstow](https://github.com/emmaburstow)
 - [Lotte Pitcher](https://github.com/LottePitcher)
 - [Mike Masey](https://github.com/MMasey)
 - [Lee Kelleher](https://github.com/leekelleher)
