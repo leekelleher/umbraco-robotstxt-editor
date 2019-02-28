@@ -14,6 +14,4 @@ REM Copy pdb
 xcopy /s /y "%2%3.pdb" "{YOUR-WEBSITE-LOCATION}\bin\"
 
 REM Copy package front-end files
-xcopy /s /y "$%4Web\UI\*.*" "{YOUR-WEBSITE-LOCATION}"
-
-REM Will be other stuff to copy over too
+xcopy /s /y "%4Web\UI\*.*" "{YOUR-WEBSITE-LOCATION}"
