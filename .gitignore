@@ -9,3 +9,9 @@ _ReSharper.*
 Thumbs.db
 .DS_Store
 *.log
+
+#VS hidden folder
+src/.vs/*
+
+# PostBuildEvents.bat will differ for all contributors
+src/Our.Umbraco.RobotsTxtEditor/PostBuildEvents.bat
