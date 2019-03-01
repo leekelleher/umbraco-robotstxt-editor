@@ -47,6 +47,11 @@
   <ItemGroup>
     <None Include="Web\UI\App_Plugins\RobotsTxtEditor\package.manifest" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web\UI\App_Plugins\RobotsTxtEditor\css\robotstxteditor.css" />
+    <Content Include="Web\UI\App_Plugins\RobotsTxtEditor\js\robotstxteditor.js" />
+    <Content Include="Web\UI\App_Plugins\RobotsTxtEditor\views\robotstxteditor.html" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>if EXIST "$(ProjectDir)PostBuildEvents.bat" (

@@ -1,1 +1,21 @@
-﻿# TODO: Add package manifest 
+﻿{
+    // array of files we want to inject into the application
+    "javascript": [
+        "~/App_Plugins/RobotsTxtEditor/js/robotstxteditor.js"
+    ],
+
+    "css": [
+        "~/App_Plugins/RobotsTxtEditor/css/robotstxteditor.css"
+    ],
+
+    // Robots Txt Editor dashboard
+    "dashboards":  [
+        {
+            "alias": "robotsTxtEditor",
+            "name":  "Robots.txt Editor",
+            "view":  "/App_Plugins/RobotsTxtEditor/views/robotstxteditor.html",
+            "sections":  [ "settings" ],
+            "weight": 50
+        }
+    ]
+}
