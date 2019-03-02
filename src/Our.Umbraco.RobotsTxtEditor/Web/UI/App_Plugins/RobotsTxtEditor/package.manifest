@@ -12,7 +12,6 @@
     "dashboards":  [
         {
             "alias": "robotsTxtEditor",
-            "name":  "Robots.txt Editor",
             "view":  "/App_Plugins/RobotsTxtEditor/views/robotstxteditor.html",
             "sections":  [ "settings" ],
             "weight": 50
