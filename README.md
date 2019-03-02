@@ -22,6 +22,7 @@ Anyone and everyone is welcome to contribute. Please take a moment to review the
 * [Bug reports](CONTRIBUTING.md#bugs)
 * [Feature requests](CONTRIBUTING.md#features)
 * [Pull requests](CONTRIBUTING.md#pull-requests)
+* [Getting started](GETTINGSTARTED.md)
 
 
 ## Contact

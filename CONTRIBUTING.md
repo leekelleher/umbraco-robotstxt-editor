@@ -117,6 +117,8 @@ project:
    git checkout -b <topic-branch-name>
    ```
 
+   If you need guidance on how to work with this repository, please refer to [Getting started](GETTINGSTARTED.md)
+
 4. Commit your changes in logical chunks. Please adhere to these [git commit
    message guidelines](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html)
    or your code is unlikely be merged into the main project. Use Git's

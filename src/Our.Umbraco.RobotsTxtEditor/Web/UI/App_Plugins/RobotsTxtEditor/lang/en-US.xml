@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<language alias="en" intName="English (US)" localName="English (US)" lcid="" culture="en-US">
+  <creator>
+    <name>An Umbraco community collaboration</name>
+    <link>https://github.com/leekelleher/umbraco-robotstxt-editor</link>
+  </creator>
+  <area alias="dashboardTabs">
+    <key alias="robotsTxtEditor">Robots.txt</key>
+  </area>
+</language>
