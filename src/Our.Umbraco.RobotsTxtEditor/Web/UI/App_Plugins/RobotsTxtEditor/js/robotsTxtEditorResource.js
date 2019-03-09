@@ -4,10 +4,10 @@ angular.module("umbraco.resources")
 
             get: function () {
                 return $http.get("backoffice/RobotsTxtEditor/RobotsTxtEditorApi/GetRobotsText");
-            }
+            },
 
-            //save: function (settings) {
-            //    return $http.post("Analytics/SettingsApi/PostSettings", angular.toJson(settings));
-            //}
+            save: function (vm) {
+                return $http.post("backoffice/RobotsTxtEditor/RobotsTxtEditorApi/SaveRobotsText", vm);
+            }
         };
     });

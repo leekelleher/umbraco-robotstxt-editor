@@ -2,9 +2,11 @@
     <umb-box>
         <umb-box-content>
             <h1>Welcome to the Robot Txt Editor</h1>
-            <textarea style="width:450px; height:250px">{{vm.text}}</textarea>
+            <p>Robots.txt exists?</p>
+            <p>{{vm.FileExists}}</p>
+            <textarea style="width:450px; height:250px" ng-model="vm.FileContents"></textarea>
             </br>
-            <button>Submit</button>
+            <button type="button" ng-click="vm.save()">Submit</button>
         </umb-box-content>
     </umb-box>
 </div>

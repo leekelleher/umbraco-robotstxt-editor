@@ -5,6 +5,7 @@ using Umbraco.Core;
 using Umbraco.Web.Mvc;
 using Umbraco.Web.WebApi;
 using Umbraco.Web.WebApi.Filters;
+using Our.Umbraco.RobotsTxtEditor.Models;
 
 namespace Our.Umbraco.RobotsTxtEditor.Controllers
 {
@@ -14,20 +15,39 @@ namespace Our.Umbraco.RobotsTxtEditor.Controllers
     public class RobotsTxtEditorApiController : UmbracoAuthorizedApiController
     {
         [HttpGet]
-        public string GetRobotsText()
+        public RobotsTxtEditorModel GetRobotsText()
         {
             var filePath = HttpContext.Current.Server.MapPath("~/robots.txt");
 
             if (!File.Exists(filePath))
             {
-                return null;
+                return new RobotsTxtEditorModel
+                {
+                    FileExists = false
+                };
             }
 
             using (var reader = File.OpenText(filePath))
             {
-                return reader.ReadToEnd();
+                var vm = new RobotsTxtEditorModel
+                {
+                    FileExists = true,
+                    FileContents = reader.ReadToEnd()
+                };
+                return vm;
             }
         }
+
+        [HttpPost]
+        public bool SaveRobotsText(RobotsTxtEditorModel vm)
+        {
+            //do something that would save it here
+
+
+
+            return true;
+        }
+
     }
 
 }
