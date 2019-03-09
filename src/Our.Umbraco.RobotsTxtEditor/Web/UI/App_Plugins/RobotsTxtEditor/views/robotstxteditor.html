@@ -1,8 +1,9 @@
-<div class="robotstxteditor-dashboard" ng-controller="RobotsTxtEditorController">
+<div class="robotstxteditor-dashboard" ng-controller="RobotsTxtEditorController as vm">
     <umb-box>
         <umb-box-content>
             <h1>Welcome to the Robot Txt Editor</h1>
-            <p>It's going to be pretty sweet once it's done!</p>
+            <textarea>{{vm.text}}</textarea>
+            <button>Submit</button>
         </umb-box-content>
     </umb-box>
 </div>

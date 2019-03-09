@@ -1,7 +1,7 @@
 ﻿{
     // array of files we want to inject into the application
     "javascript": [
-        "~/App_Plugins/RobotsTxtEditor/js/robotstxteditor.js"
+        "~/App_Plugins/RobotsTxtEditor/js/robotstxteditorController.js"
     ],
 
     "css": [
