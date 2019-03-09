@@ -1,10 +1,9 @@
-
 angular.module("umbraco")
     .controller("RobotsTxtEditorController",
-        function ($http) {
-
+        function ($scope, robotsTxtEditorResource) {
             var vm = this;
-            vm.text = $http.get("backoffice/RobotsTxtEditor/RobotsTxtEditorApi/GetRobotsText");
-            //vm.text = "A jubilatory Emma and Lotte";
-            console.log(vm.text);
+            robotsTxtEditorResource.get().then(function (response) {
+                vm.text = response.data;
+                console.log(vm.text);
+            });
         });

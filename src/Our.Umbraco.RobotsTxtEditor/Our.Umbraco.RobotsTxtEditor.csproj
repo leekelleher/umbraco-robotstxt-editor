@@ -241,9 +241,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web\UI\App_Plugins\RobotsTxtEditor\css\robotstxteditor.css" />
+    <Content Include="Web\UI\App_Plugins\RobotsTxtEditor\js\robotsTxtEditorResource.js" />
     <Content Include="Web\UI\App_Plugins\RobotsTxtEditor\js\robotsTxtEditorController.js" />
     <Content Include="Web\UI\App_Plugins\RobotsTxtEditor\lang\en-US.xml" />
     <Content Include="Web\UI\App_Plugins\RobotsTxtEditor\views\robotstxteditor.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
