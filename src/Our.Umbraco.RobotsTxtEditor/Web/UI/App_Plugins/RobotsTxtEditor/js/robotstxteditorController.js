@@ -4,7 +4,8 @@ angular.module("umbraco")
 
         var vm = this;
         robotsTxtEditorResource.get().then(function (response) {
-            vm = response.data;
+            vm.data = response.data;
+            console.log(vm);
         });
 
         vm.save = function () {
