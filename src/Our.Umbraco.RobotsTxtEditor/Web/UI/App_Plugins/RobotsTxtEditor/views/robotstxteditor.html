@@ -1,12 +1,19 @@
 <div class="robotstxteditor-dashboard" ng-controller="RobotsTxtEditorController as vm">
     <umb-box>
         <umb-box-content>
+
             <h1>Welcome to the Robot Txt Editor</h1>
-            <p>Robots.txt exists?</p>
-            <p>{{vm.data.FileExists}}</p>
-            <textarea style="width:450px; height:250px" ng-model="vm.data.FileContents"></textarea>
-            <br/>
-            <button type="button" ng-click="vm.save()">Submit</button>
+
+            <umb-load-indicator ng-show="vm.loading"></umb-load-indicator>
+            
+            <div ng-show="!vm.loading">
+                <p>Robots.txt exists?</p>
+                <p>{{vm.data.FileExists}}</p>
+                <textarea style="width: 450px; height: 250px" ng-model="vm.data.FileContents"></textarea>
+                <br />
+                <button type="button" ng-click="vm.saveData()">Submit</button>
+            </div>
+
         </umb-box-content>
     </umb-box>
 </div>
