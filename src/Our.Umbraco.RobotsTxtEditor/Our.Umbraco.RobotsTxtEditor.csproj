@@ -246,9 +246,7 @@
     <Content Include="Web\UI\App_Plugins\RobotsTxtEditor\lang\en-US.xml" />
     <Content Include="Web\UI\App_Plugins\RobotsTxtEditor\views\robotstxteditor.html" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>if EXIST "$(ProjectDir)PostBuildEvents.bat" (
