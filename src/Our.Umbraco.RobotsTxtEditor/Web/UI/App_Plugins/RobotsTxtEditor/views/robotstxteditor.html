@@ -1,19 +1,36 @@
-<div class="robotstxteditor-dashboard" ng-controller="RobotsTxtEditorController as vm">
+<div class="umb-robotstxteditor" ng-controller="RobotsTxtEditorController as vm">
+
     <umb-box>
         <umb-box-content>
-
-            <h1>Welcome to the Robot Txt Editor</h1>
+            
+            <h3 class="bold">Robots.txt Editor</h3>
 
             <umb-load-indicator ng-show="vm.loading"></umb-load-indicator>
-            
-            <div ng-show="!vm.loading">
-                <p>Robots.txt exists?</p>
-                <p>{{vm.data.FileExists}}</p>
-                <textarea style="width: 450px; height: 250px" ng-model="vm.data.FileContents"></textarea>
-                <br />
-                <button type="button" ng-click="vm.saveData()">Submit</button>
+
+            <p ng-show="!vm.loading && !vm.data.FileExists">
+                You do not have a robots.txt file in the root of your website. One will be created when you press the Save button.
+            </p>
+
+            <div class="umb-robotstxteditor-main" ng-show="!vm.loading">
+                <div class="umb-robotstxteditor-controls">
+                    <p>
+                        <!-- TODO: replace with 'posh' textarea with line numbers (like editing styles)-->
+                        <textarea style="width: 450px; height: 250px" ng-model="vm.data.FileContents"></textarea>
+                    </p>
+                    <p>
+                        <umb-button type="button"
+                                    label="Save Robots.txt"
+                                    button-style="success"
+                                    action="vm.saveData()">
+                        </umb-button>
+                    </p>
+                </div>
+                <div class="umb-robotstxteditor-notes">
+                    <!-- TODO: add button to insert 'standard' rules for an Umbraco website-->
+                </div>
             </div>
 
         </umb-box-content>
     </umb-box>
+
 </div>

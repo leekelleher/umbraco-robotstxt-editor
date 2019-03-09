@@ -1,0 +1,18 @@
+.umb-robotstxteditor {
+
+}
+
+.umb-robotstxteditor-main {
+    display: flex;
+}
+
+.umb-robotstxteditor-main > div {
+    width: 50%;
+}
+
+.umb-robotstxteditor-controls {
+    margin-right: 14px;
+}
+
+.umb-robotstxteditor-notes {
+}
