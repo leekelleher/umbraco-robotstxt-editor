@@ -1,6 +1,6 @@
 angular.module("umbraco")
     .controller("RobotsTxtEditorController",
-    function (robotsTxtEditorResource) {
+    function (robotsTxtEditorResource, notificationsService) {
 
         var vm = this;
 
@@ -24,6 +24,7 @@ angular.module("umbraco")
                 console.log("API post returned " + success);
                 if (success) {
                     vm.data.FileExists = true;
+                    notificationsService.success('Saved', 'Text saved to Robots.txt');
                 }
             });
         }

@@ -40,7 +40,7 @@ namespace Our.Umbraco.RobotsTxtEditor.Controllers
         }
 
         [HttpPost]
-        public RobotsTxtEditorModel SaveRobotsText(RobotsTxtEditorModel vm)
+        public bool SaveRobotsText(RobotsTxtEditorModel vm)
         {
             //do something that would save it here
             var filePath = HttpContext.Current.Server.MapPath("~/robots.txt");
@@ -49,10 +49,9 @@ namespace Our.Umbraco.RobotsTxtEditor.Controllers
             using (StreamWriter sw = File.CreateText(filePath))
             {
                 sw.WriteLine(vm.FileContents);
-                vm.Success = true;
             }
            
-            return vm;
+            return true;
         }
 
     }
