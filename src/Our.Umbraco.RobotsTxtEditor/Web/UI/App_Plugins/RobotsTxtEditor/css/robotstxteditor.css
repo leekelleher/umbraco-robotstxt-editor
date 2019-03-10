@@ -6,13 +6,17 @@
     display: flex;
 }
 
-.umb-robotstxteditor-main > div {
-    width: 50%;
+.umb-robotstxteditor-controls {
+    width: 60%;
+    margin-right: 30px;
 }
 
-.umb-robotstxteditor-controls {
-    margin-right: 14px;
+.umb-robotstxteditor-controls textarea {
+    width: 100%;
+    height: 200px;
 }
 
 .umb-robotstxteditor-notes {
+    width: 40%;
+    padding-top: 15px;
 }

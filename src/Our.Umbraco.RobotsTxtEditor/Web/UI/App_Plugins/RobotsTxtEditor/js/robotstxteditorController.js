@@ -6,6 +6,7 @@ angular.module("umbraco")
 
         vm.getData = getData;
         vm.saveData = saveData;
+        vm.reloadData = reloadData;
 
         vm.loading = true;
         vm.data = null;
@@ -21,7 +22,15 @@ angular.module("umbraco")
             robotsTxtEditorResource.save(vm.data).then(function (response) {
                 var success = response.data;
                 console.log("API post returned " + success);
+                if (success) {
+                    vm.data.FileExists = true;
+                }
             });
+        }
+
+        function reloadData() {
+            vm.loading = false;
+            getData();
         }
 
         vm.getData();

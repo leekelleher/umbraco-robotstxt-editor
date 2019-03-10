@@ -7,26 +7,33 @@
 
             <umb-load-indicator ng-show="vm.loading"></umb-load-indicator>
 
-            <p ng-show="!vm.loading && !vm.data.FileExists">
-                You do not have a robots.txt file in the root of your website. One will be created when you press the Save button.
-            </p>
-
             <div class="umb-robotstxteditor-main" ng-show="!vm.loading">
                 <div class="umb-robotstxteditor-controls">
+                    <div class="umb-box">
+
+                    </div>
                     <p>
                         <!-- TODO: replace with 'posh' textarea with line numbers (like editing styles)-->
-                        <textarea style="width: 450px; height: 250px" ng-model="vm.data.FileContents"></textarea>
+                        <textarea ng-model="vm.data.FileContents"></textarea>
                     </p>
                     <p>
                         <umb-button type="button"
-                                    label="Save Robots.txt"
+                                    label="{{vm.data.FileExists ? 'Update Robots.txt' : 'Create Robots.txt'}}"
                                     button-style="success"
                                     action="vm.saveData()">
                         </umb-button>
+
                     </p>
                 </div>
                 <div class="umb-robotstxteditor-notes">
-                    <!-- TODO: add button to insert 'standard' rules for an Umbraco website-->
+                    <!-- TODO: add button to insert 'standard' rules for an Umbraco website -->
+                    <!-- TODO: add other buttons / helpful functionality -->
+                    <div ng-show="vm.data.FileExists">
+                        <umb-button type="button"
+                                    label="Reload from disk"
+                                    action="vm.reloadData()">
+                        </umb-button>
+                    </div>
                 </div>
             </div>
 
