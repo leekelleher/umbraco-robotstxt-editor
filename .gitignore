@@ -10,6 +10,9 @@ Thumbs.db
 .DS_Store
 *.log
 
+# nuget packages
+src/packages
+
 #VS hidden folder
 src/.vs/*
 
