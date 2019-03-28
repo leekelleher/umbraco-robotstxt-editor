@@ -28,6 +28,10 @@ angular.module("umbraco")
 
                         vm.data.FileContents = defaultValue.join("");
                     }
+                
+                    if(vm.editor !== null) {
+                        vm.editor.setValue(vm.data.FileContents);
+                    }
 
                     vm.loading = false;
                 });
@@ -51,7 +55,7 @@ angular.module("umbraco")
 
             function initEditor() {
                 vm.aceOption = {
-                    mode: "javascript",
+                    mode: "text",
                     theme: "chrome",
                     showPrintMargin: false,
                     advanced: {
@@ -61,9 +65,7 @@ angular.module("umbraco")
                         enableLiveAutocompletion: false
                     },
                     onLoad: function (_editor) {
-
                         vm.editor = _editor;
-
                         //Update the auto-complete method to use ctrl+alt+space
                         _editor.commands.bindKey("ctrl-alt-space", "startAutocomplete");
 
@@ -107,7 +109,6 @@ angular.module("umbraco")
                 }
 
                 function setFormState(state) {
-
                     // get the current form
                     var currentForm = angularHelper.getCurrentForm($scope);
 
