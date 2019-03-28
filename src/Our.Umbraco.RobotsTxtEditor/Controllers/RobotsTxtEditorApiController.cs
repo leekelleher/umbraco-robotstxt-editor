@@ -1,12 +1,11 @@
-﻿using System.Web.Http;
-using System.IO;
-using System.Web;
+﻿using System.IO;
+using System.Web.Http;
+using Our.Umbraco.RobotsTxtEditor.Models;
 using Umbraco.Core;
+using Umbraco.Core.IO;
 using Umbraco.Web.Mvc;
 using Umbraco.Web.WebApi;
 using Umbraco.Web.WebApi.Filters;
-using Our.Umbraco.RobotsTxtEditor.Models;
-using System;
 
 namespace Our.Umbraco.RobotsTxtEditor.Controllers
 {
@@ -18,9 +17,9 @@ namespace Our.Umbraco.RobotsTxtEditor.Controllers
         [HttpGet]
         public RobotsTxtEditorModel GetRobotsText()
         {
-            var filePath = HttpContext.Current.Server.MapPath("~/robots.txt");
+            var filePath = IOHelper.MapPath("~/robots.txt");
 
-            if (!File.Exists(filePath))
+            if (File.Exists(filePath) == false)
             {
                 return new RobotsTxtEditorModel
                 {
@@ -30,12 +29,11 @@ namespace Our.Umbraco.RobotsTxtEditor.Controllers
 
             using (var reader = File.OpenText(filePath))
             {
-                var vm = new RobotsTxtEditorModel
+                return new RobotsTxtEditorModel
                 {
                     FileExists = true,
                     FileContents = reader.ReadToEnd()
                 };
-                return vm;
             }
         }
 
@@ -43,17 +41,15 @@ namespace Our.Umbraco.RobotsTxtEditor.Controllers
         public bool SaveRobotsText(RobotsTxtEditorModel vm)
         {
             //do something that would save it here
-            var filePath = HttpContext.Current.Server.MapPath("~/robots.txt");
+            var filePath = IOHelper.MapPath("~/robots.txt");
 
             //create the file and then write to it
-            using (StreamWriter sw = File.CreateText(filePath))
+            using (var sw = File.CreateText(filePath))
             {
                 sw.WriteLine(vm.FileContents);
             }
-           
+
             return true;
         }
-
     }
-
 }
