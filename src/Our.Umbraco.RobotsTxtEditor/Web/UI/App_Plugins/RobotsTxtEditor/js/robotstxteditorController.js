@@ -38,7 +38,7 @@ angular.module("umbraco")
                 console.log("API post returned " + success);
                 if (success) {
                     vm.data.FileExists = true;
-                    notificationsService.success('Saved', 'Text saved to Robots.txt');
+                    notificationsService.success("Saved", "Text saved to Robots.txt");
                 }
             });
         }
