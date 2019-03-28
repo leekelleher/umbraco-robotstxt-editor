@@ -48,10 +48,8 @@ namespace Our.Umbraco.RobotsTxtEditor.Controllers
             {
                 sw.WriteLine(vm.FileContents);
             }
-           
+
             return true;
         }
-
     }
-
 }

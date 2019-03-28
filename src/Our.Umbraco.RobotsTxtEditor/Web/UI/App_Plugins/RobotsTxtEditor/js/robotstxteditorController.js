@@ -15,7 +15,7 @@ angular.module("umbraco")
             robotsTxtEditorResource.get().then(function (response) {
                 vm.data = response.data;
 
-                if(vm.data.FileExists === false) {
+                if (vm.data.FileExists === false) {
                     // TODO: See if there is a nice way of doing this whilst maintaining correct format
                     var defaultValue = [];
                     defaultValue.push("# default robots.txt content for Umbraco v8");
