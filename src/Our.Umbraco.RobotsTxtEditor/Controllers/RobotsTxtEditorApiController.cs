@@ -19,7 +19,7 @@ namespace Our.Umbraco.RobotsTxtEditor.Controllers
         {
             var filePath = IOHelper.MapPath("~/robots.txt");
 
-            if (!File.Exists(filePath))
+            if (File.Exists(filePath) == false)
             {
                 return new RobotsTxtEditorModel
                 {
