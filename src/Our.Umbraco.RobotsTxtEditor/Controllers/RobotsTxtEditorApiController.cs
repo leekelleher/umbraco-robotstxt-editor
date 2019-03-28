@@ -2,6 +2,7 @@
 using System.Web.Http;
 using Our.Umbraco.RobotsTxtEditor.Models;
 using Umbraco.Core;
+using Umbraco.Core.IO;
 using Umbraco.Web.Mvc;
 using Umbraco.Web.WebApi;
 using Umbraco.Web.WebApi.Filters;
@@ -16,7 +17,7 @@ namespace Our.Umbraco.RobotsTxtEditor.Controllers
         [HttpGet]
         public RobotsTxtEditorModel GetRobotsText()
         {
-            var filePath = HttpContext.Current.Server.MapPath("~/robots.txt");
+            var filePath = IOHelper.MapPath("~/robots.txt");
 
             if (!File.Exists(filePath))
             {
@@ -41,7 +42,7 @@ namespace Our.Umbraco.RobotsTxtEditor.Controllers
         public bool SaveRobotsText(RobotsTxtEditorModel vm)
         {
             //do something that would save it here
-            var filePath = HttpContext.Current.Server.MapPath("~/robots.txt");
+            var filePath = IOHelper.MapPath("~/robots.txt");
 
             //create the file and then write to it
             using (StreamWriter sw = File.CreateText(filePath))
