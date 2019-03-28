@@ -44,7 +44,7 @@ namespace Our.Umbraco.RobotsTxtEditor.Controllers
             var filePath = IOHelper.MapPath("~/robots.txt");
 
             //create the file and then write to it
-            using (StreamWriter sw = File.CreateText(filePath))
+            using (var sw = File.CreateText(filePath))
             {
                 sw.WriteLine(vm.FileContents);
             }
