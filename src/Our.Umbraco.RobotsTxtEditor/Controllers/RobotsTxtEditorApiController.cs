@@ -29,12 +29,11 @@ namespace Our.Umbraco.RobotsTxtEditor.Controllers
 
             using (var reader = File.OpenText(filePath))
             {
-                var vm = new RobotsTxtEditorModel
+                return new RobotsTxtEditorModel
                 {
                     FileExists = true,
                     FileContents = reader.ReadToEnd()
                 };
-                return vm;
             }
         }
 
