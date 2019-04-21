@@ -1,51 +1,54 @@
 <div class="umb-robotstxteditor" ng-controller="RobotsTxtEditorController as vm">
 
-    <umb-box>
-        <umb-box-content>
 
-            <h3 class="bold">Robots.txt Editor</h3>
+    <umb-load-indicator ng-show="vm.loading"></umb-load-indicator>
 
-            <umb-load-indicator ng-show="vm.loading"></umb-load-indicator>
- 
-            <div class="umb-robotstxteditor-main" ng-show="!vm.loading">
-                <div class="umb-robotstxteditor-controls">
-                    <!--<p>
-         TODO: replace with 'posh' textarea with line numbers (like editing styles)
-        <textarea ng-model="vm.data.FileContents"></textarea>
-    </p>-->
+    <div class="umb-robotstxteditor-main" ng-show="!vm.loading">
+        <div class="umb-robotstxteditor-controls">
+            <!--<p>
+                    TODO: replace with 'posh' textarea with line numbers (like editing styles)
+                <textarea ng-model="vm.data.FileContents"></textarea>
+            </p>-->
+            <umb-editor-container>
+                <umb-box>
+                    <umb-box-content>
+                        <h3 class="bold">Robots.txt Editor</h3>
 
-                    <umb-editor-container>
-                        <umb-box>
-                            <umb-box-content>
-                                <div class="flex" style="margin-bottom: 30px;">
-                                    <div class="flex" style="margin-left: auto;">
-                                        <umb-button type="button"
-                                                    label="{{vm.data.FileExists ? 'Update Robots.txt' : 'Create Robots.txt'}}"
-                                                    button-style="success"
-                                                    action="vm.saveData()">
-                                        </umb-button>
+                        <div class="flex" style="margin-bottom: 30px;">
+                            <div class="flex" style="margin-left: auto;">
+                                <umb-button type="button"
+                                            label="{{vm.data.FileExists ? 'Update Robots.txt' : 'Create Robots.txt'}}"
+                                            button-style="success"
+                                            size="xs"
+                                            action="vm.saveData()">
+                                </umb-button>
 
-                                        <umb-button type="button"
-                                                    ng-show="vm.data.FileExists"
-                                                    style="margin-left: 5px;"
-                                                    label="Reload from disk"
-                                                    action="vm.reloadData()">
-                                        </umb-button>
-                                    </div>
-                                </div>
+                                <!--<umb-button-group
+                                    style="margin-left: 5px;"
+                                    default-button="vm.editorControls.insertDefaultButton"
+                                    sub-buttons="vm.editorControls.insertSubButtons"
+                                    size="xs"
+                                    icon="icon-add">
+                                </umb-button-group>-->
 
-                                <div auto-scale="85"
-                                     umb-ace-editor="vm.aceOption"
-                                     model="vm.data.FileContents">
-                                </div>
-                            </umb-box-content>
-                        </umb-box>
-                    </umb-editor-container>
-                </div>
-               
-            </div>
+                                <umb-button type="button"
+                                            ng-show="vm.data.FileExists"
+                                            size="xs"
+                                            style="margin-left: 5px;"
+                                            label="Reload from disk"
+                                            action="vm.reloadData()">
+                                </umb-button>
+                            </div>
+                        </div>
 
-        </umb-box-content>
-    </umb-box>
+                        <div auto-scale="85"
+                             umb-ace-editor="vm.aceOption"
+                             model="vm.data.FileContents">
+                        </div>
+                    </umb-box-content>
+                </umb-box>
+            </umb-editor-container>
+        </div>
 
+    </div>
 </div>
