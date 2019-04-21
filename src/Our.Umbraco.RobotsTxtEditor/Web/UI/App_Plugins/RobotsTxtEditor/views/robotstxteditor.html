@@ -13,6 +13,18 @@
                 <umb-box>
                     <umb-box-content>
                         <h3 class="bold">Robots.txt Editor</h3>
+                        <p>Welcome to the Umbraco Robots.Txt editor dashboard!</p>
+                        <p>Below you can enter the files and folders you wish to be ingnored by web-crawlers and search engines.</p>
+                        <p>To add a comment to the file, start the lnie with the # character, for example:</p>
+                        <p># Welcome to my robots file</p>
+                        <p>To add a file or folder, type the word 'Disallow' followed by a semi-colon, for example:</p>
+                        <p>Begin and end the filepath with a forward slash</p>
+                        <p>Disallow: /bin/</p>
+                        <p>Add User-Agent to prevent a particular web crawler by typing the phrase 'User-Agent' and declare the name of the particular bot you wish to disallow. </p>
+                        <p>If you wish to prevent all bots and crawlers, just add a star after the User-Agent declaration.</p>
+                        <p>Followed this with 'Disallow' and a forward slash to include the entire site, for example</p>
+                        <p>User-Agent: *</p>
+                        <p>Disallow: /</p>
 
                         <div class="flex" style="margin-bottom: 30px;">
                             <div class="flex" style="margin-left: auto;">
@@ -24,12 +36,12 @@
                                 </umb-button>
 
                                 <!--<umb-button-group
-                                    style="margin-left: 5px;"
-                                    default-button="vm.editorControls.insertDefaultButton"
-                                    sub-buttons="vm.editorControls.insertSubButtons"
-                                    size="xs"
-                                    icon="icon-add">
-                                </umb-button-group>-->
+                style="margin-left: 5px;"
+                default-button="vm.editorControls.insertDefaultButton"
+                sub-buttons="vm.editorControls.insertSubButtons"
+                size="xs"
+                icon="icon-add">
+            </umb-button-group>-->
 
                                 <umb-button type="button"
                                             ng-show="vm.data.FileExists"
