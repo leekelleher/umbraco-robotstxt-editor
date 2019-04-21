@@ -10,33 +10,39 @@
             <div class="umb-robotstxteditor-main" ng-show="!vm.loading">
                 <div class="umb-robotstxteditor-controls">
                     <!--<p>
-                         TODO: replace with 'posh' textarea with line numbers (like editing styles)
-                        <textarea ng-model="vm.data.FileContents"></textarea>
-                    </p>-->
-                    
-                    <div auto-scale="85"
-                         umb-ace-editor="vm.aceOption"
-                         model="vm.data.FileContents">
-                    </div>
-                    <p>
-                        <umb-button type="button"
-                                    label="{{vm.data.FileExists ? 'Update Robots.txt' : 'Create Robots.txt'}}"
-                                    button-style="success"
-                                    action="vm.saveData()">
-                        </umb-button>
+         TODO: replace with 'posh' textarea with line numbers (like editing styles)
+        <textarea ng-model="vm.data.FileContents"></textarea>
+    </p>-->
 
-                    </p>
+                    <umb-editor-container>
+                        <umb-box>
+                            <umb-box-content>
+                                <div class="flex" style="margin-bottom: 30px;">
+                                    <div class="flex" style="margin-left: auto;">
+                                        <umb-button type="button"
+                                                    label="{{vm.data.FileExists ? 'Update Robots.txt' : 'Create Robots.txt'}}"
+                                                    button-style="success"
+                                                    action="vm.saveData()">
+                                        </umb-button>
+
+                                        <umb-button type="button"
+                                                    ng-show="vm.data.FileExists"
+                                                    style="margin-left: 5px;"
+                                                    label="Reload from disk"
+                                                    action="vm.reloadData()">
+                                        </umb-button>
+                                    </div>
+                                </div>
+
+                                <div auto-scale="85"
+                                     umb-ace-editor="vm.aceOption"
+                                     model="vm.data.FileContents">
+                                </div>
+                            </umb-box-content>
+                        </umb-box>
+                    </umb-editor-container>
                 </div>
-                <div class="umb-robotstxteditor-notes">
-                    <!-- TODO: add button to insert 'standard' rules for an Umbraco website -->
-                    <!-- TODO: add other buttons / helpful functionality -->
-                    <div ng-show="vm.data.FileExists">
-                        <umb-button type="button"
-                                    label="Reload from disk"
-                                    action="vm.reloadData()">
-                        </umb-button>
-                    </div>
-                </div>
+               
             </div>
 
         </umb-box-content>

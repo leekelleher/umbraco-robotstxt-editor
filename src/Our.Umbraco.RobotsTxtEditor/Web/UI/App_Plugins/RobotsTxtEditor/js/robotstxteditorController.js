@@ -28,8 +28,8 @@ angular.module("umbraco")
 
                         vm.data.FileContents = defaultValue.join("");
                     }
-                
-                    if(vm.editor !== null) {
+
+                    if (vm.editor !== undefined) {
                         vm.editor.setValue(vm.data.FileContents);
                     }
 
@@ -66,6 +66,7 @@ angular.module("umbraco")
                     },
                     onLoad: function (_editor) {
                         vm.editor = _editor;
+
                         //Update the auto-complete method to use ctrl+alt+space
                         _editor.commands.bindKey("ctrl-alt-space", "startAutocomplete");
 
@@ -102,7 +103,7 @@ angular.module("umbraco")
 
                         vm.editor.on("change", changeAceEditor);
                     }
-                }
+                };
 
                 function changeAceEditor() {
                     setFormState("dirty");
