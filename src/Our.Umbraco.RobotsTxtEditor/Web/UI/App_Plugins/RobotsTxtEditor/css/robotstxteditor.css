@@ -20,3 +20,7 @@
     width: 40%;
     padding-top: 15px;
 }
+
+.ace-editor {
+    border: 1px solid #ebebeb;
+}
