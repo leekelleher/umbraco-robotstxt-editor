@@ -73,7 +73,7 @@ angular.module("umbraco")
             function saveData() {
                 robotsTxtEditorResource.save(vm.data).then(function (response) {
                     var success = response.data;
-                    console.log("API post returned " + success);
+                    console.log("API post returned ", success);
                     if (success) {
                         vm.data.FileExists = true;
                         notificationsService.success("Saved", "Text saved to Robots.txt");
