@@ -61,7 +61,7 @@ namespace Our.Umbraco.RobotsTxtEditor.Controllers
 
             return new RobotsTxtResponseModel
             {
-                ErrorMessage = errorMessages,
+                ErrorMessages = errorMessages,
                 Success = errorMessages.Count == 0
             };
         }
@@ -73,12 +73,12 @@ namespace Our.Umbraco.RobotsTxtEditor.Controllers
 		/// <returns>A list of Pair objects, containing the line number and detail of the error.</returns>
 		public List<Pair> ValidateRobotsTxt(string contents)
         {
-            var lines = new List<string>(contents.Split(Environment.NewLine.ToCharArray(), StringSplitOptions.RemoveEmptyEntries));
+            var lines = new List<string>(contents.Split(Environment.NewLine.ToCharArray()));
             var errors = new List<Pair>();
 
             for (int i = 0; i < lines.Count; i++)
             {
-                var line = lines[i].Trim().ToUpper();
+                var line = lines[i].Trim();
                 var checkLine = line.ToUpper();
 
                 // check if the line is invalid
@@ -89,10 +89,11 @@ namespace Our.Umbraco.RobotsTxtEditor.Controllers
                     (!checkLine.StartsWith("SITEMAP")) &&
                     (!checkLine.StartsWith("CRAWL-DELAY")) &&
                     (!checkLine.StartsWith("REQUEST-RATE")) &&
-                    (!checkLine.StartsWith("VISIT-TIME")))
+                    (!checkLine.StartsWith("VISIT-TIME")) &&
+                    (!checkLine.IsNullOrWhiteSpace()))
                 {
                     // invalid command
-                    errors.Add(new Pair(i, line));
+                    errors.Add(new Pair(i + 1, line));
                 }
             }
 

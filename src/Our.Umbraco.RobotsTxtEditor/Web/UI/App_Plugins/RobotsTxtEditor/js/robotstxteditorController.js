@@ -10,6 +10,7 @@ angular.module("umbraco")
 
             vm.loading = true;
             vm.data = null;
+            vm.errors = [];
 
             //vm.editorControls = {};
 
@@ -73,11 +74,17 @@ angular.module("umbraco")
 
             function saveData() {
                 robotsTxtEditorResource.save(vm.data).then(function (response) {
-                    var success = response.data;
-                    console.log("API post returned ", success);
-                    if (success) {
+                    var data = response.data;
+
+                    console.log("API post returned ", data);
+
+                    if (data.Success === true) {
                         vm.data.FileExists = true;
+                        vm.errors = [];
                         notificationsService.success("Saved", "Text saved to Robots.txt");
+                    } else {
+                        vm.errors = data.ErrorMessages;
+                        notificationsService.error("Validation Error", "There were validation errors");
                     }
                 });
             }

@@ -15,6 +15,14 @@
                         <h3 class="bold">Robots.txt Editor</h3>
                         <p>For more information about the robots.txt file, please visit <a href="http://www.robotstxt.org/robotstxt.html" target="_blank" rel="noopener noreferrer" class="btn-link -underline">www.robotstxt.org</a></p>
 
+                        <div ng-if="vm.errors.length > 0" class="alert alert-block alert-error">
+                            <p class="bold">Please fix the following validation errors</p>
+
+                            <ul>
+                                <li ng-repeat="error in vm.errors">Line {{error.First}}: "{{error.Second}}" is not valid.</li>
+                            </ul>
+                        </div>
+
                         <div class="flex" style="margin-bottom: 30px;">
                             <div class="flex" style="margin-left: auto;">
                                 <umb-button type="button"

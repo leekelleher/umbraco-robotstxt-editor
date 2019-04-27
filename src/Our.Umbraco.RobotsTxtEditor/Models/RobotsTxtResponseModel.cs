@@ -6,6 +6,6 @@ namespace Our.Umbraco.RobotsTxtEditor.Models
     public class RobotsTxtResponseModel
     {
         public bool Success { get; set; }
-        public List<Pair> ErrorMessage { get; set; }
+        public List<Pair> ErrorMessages { get; set; }
     }
 }
