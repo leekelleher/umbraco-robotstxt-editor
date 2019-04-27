@@ -46,29 +46,24 @@ namespace Our.Umbraco.RobotsTxtEditor.Controllers
             //do something that would save it here
             var filePath = IOHelper.MapPath("~/robots.txt");
 
-            var response = new RobotsTxtResponseModel();
+            var contents = vm.FileContents;
 
-            //create the file and then write to it
-            // TODO: This currently always overrides the existing robots.txt file. This is bad. This needs fixing.
-            using (var sw = File.CreateText(filePath))
+            var errorMessages = ValidateRobotsTxt(contents);
+
+            if (errorMessages.Count == 0)
             {
-                var contents = vm.FileContents;
-
-                response.ErrorMessage = ValidateRobotsTxt(contents);
-
-                if (response.ErrorMessage.Count > 0)
+                //create the file and then write to it
+                using (var sw = File.CreateText(filePath))
                 {
-                    response.Success = false;
+                    sw.WriteLine(contents);
                 }
-                else
-                {
-                    response.Success = true;
-                    sw.WriteLine(vm.FileContents);
-                }
-
-
-                return response;
             }
+
+            return new RobotsTxtResponseModel
+            {
+                ErrorMessage = errorMessages,
+                Success = errorMessages.Count == 0
+            };
         }
 
         /// <summary>
