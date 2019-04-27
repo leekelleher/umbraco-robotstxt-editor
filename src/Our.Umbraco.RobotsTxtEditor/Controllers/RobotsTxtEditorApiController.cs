@@ -35,7 +35,7 @@ namespace Our.Umbraco.RobotsTxtEditor.Controllers
                 return new RobotsTxtEditorModel
                 {
                     FileExists = true,
-                    FileContents = reader.ReadToEnd()
+                    FileContents = reader.ReadToEnd().TrimEnd()
                 };
             }
         }

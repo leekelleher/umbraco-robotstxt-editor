@@ -101,7 +101,7 @@ angular.module("umbraco")
                     showPrintMargin: false,
                     wrap: true,
                     advanced: {
-                        fontSize: "14px",
+                        fontSize: "14px"
                     },
                     onLoad: function (_editor) {
                         vm.editor = _editor;
