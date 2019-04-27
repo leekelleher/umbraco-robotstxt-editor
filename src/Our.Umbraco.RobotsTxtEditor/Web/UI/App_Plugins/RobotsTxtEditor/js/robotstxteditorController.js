@@ -47,11 +47,12 @@ angular.module("umbraco")
                         // TODO: See if there is a nice way of doing this whilst maintaining correct format
                         var defaultValue = [];
                         defaultValue.push("# To add a comment to the file, start the line with the # character.\n");
-                        defaultValue.push("# User-Agent is used to target a particular web crawler.\n")
-                        defaultValue.push("# Any rules declared below it will apply to that User-Agent.\n")
-                        defaultValue.push("# To add a file or folder, type the word 'Disallow' followed by a semi-colon.\n")
+                        defaultValue.push("# User-Agent is used to target a particular web crawler.\n");
+                        defaultValue.push("# Any rules declared below it will apply to that User-Agent.\n");
+                        defaultValue.push("# To hide a file or folder from the User-Agent, type the word 'Disallow' followed by a semi-colon.\n");
                         defaultValue.push("\n");
                         defaultValue.push("# Below is the default recommended robots.txt content for Umbraco v8.\n");
+                        defaultValue.push("\n");
                         defaultValue.push("User-Agent: *\n");
                         defaultValue.push("\n");
                         defaultValue.push("Disallow: /bin/\n");
@@ -94,9 +95,6 @@ angular.module("umbraco")
                     wrap: true,
                     advanced: {
                         fontSize: "14px",
-                        enableSnippets: true,
-                        enableBasicAutocompletion: true,
-                        enableLiveAutocompletion: false
                     },
                     onLoad: function (_editor) {
                         vm.editor = _editor;
