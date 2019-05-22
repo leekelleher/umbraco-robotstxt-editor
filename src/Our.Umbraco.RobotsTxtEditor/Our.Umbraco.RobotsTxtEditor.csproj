@@ -290,6 +290,7 @@
   <ItemGroup>
     <Compile Include="Controllers\RobotsTxtEditorApiController.cs" />
     <Compile Include="Models\RobotsTxtEditorModel.cs" />
+    <Compile Include="Models\RobotsTxtResponseModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
