@@ -1,26 +1,3 @@
-.umb-robotstxteditor {
-
-}
-
-.umb-robotstxteditor-main {
-    display: flex;
-}
-
-.umb-robotstxteditor-controls {
-    width: 60%;
-    margin-right: 30px;
-}
-
-.umb-robotstxteditor-controls textarea {
-    width: 100%;
-    height: 200px;
-}
-
-.umb-robotstxteditor-notes {
-    width: 40%;
-    padding-top: 15px;
-}
-
-.ace-editor {
+.umb-robotstxteditor .ace-editor {
     border: 1px solid #ebebeb;
 }
