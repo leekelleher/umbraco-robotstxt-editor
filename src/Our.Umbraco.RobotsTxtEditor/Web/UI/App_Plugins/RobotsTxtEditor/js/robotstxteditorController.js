@@ -43,8 +43,6 @@ angular.module("umbraco")
                 robotsTxtEditorResource.save(vm.data).then(function (response) {
                     var data = response.data;
 
-                    console.log("API post returned ", data);
-
                     if (data.Success === true) {
                         vm.data.FileExists = true;
                         vm.errors = [];
