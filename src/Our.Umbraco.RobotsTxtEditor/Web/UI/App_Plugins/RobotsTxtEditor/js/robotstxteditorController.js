@@ -6,62 +6,29 @@ angular.module("umbraco")
 
             vm.getData = getData;
             vm.saveData = saveData;
-            vm.reloadData = reloadData;
 
             vm.loading = true;
             vm.data = null;
             vm.errors = [];
-
-            //vm.editorControls = {};
-
-            //// insert buttons
-            //vm.editorControls.insertDefaultButton = {
-            //    labelKey: "Insert",
-            //    addEllipsis: "true",
-            //    handler: function() {
-            //        // vm.openInsertOverlay();
-            //    }
-            //};
-
-            //vm.editorControls.insertSubButtons = [
-            //    {
-            //        labelKey: "Disallow rule",
-            //        addEllipsis: "true",
-            //        handler: function () {
-            //            // vm.openPageFieldOverlay();
-            //        }
-            //    },
-            //    {
-            //        labelKey: "User-Agent rule",
-            //        addEllipsis: "true",
-            //        handler: function () {
-            //            // vm.openMacroOverlay()
-            //        }
-            //    }
-            //];
 
             function getData() {
                 robotsTxtEditorResource.get().then(function (response) {
                     vm.data = response.data;
 
                     if (vm.data.FileExists === false) {
-                        // TODO: See if there is a nice way of doing this whilst maintaining correct format
-                        var defaultValue = [];
-                        defaultValue.push("# To add a comment to the file, start the line with the # character.\n");
-                        defaultValue.push("# User-Agent is used to target a particular web crawler.\n");
-                        defaultValue.push("# Any rules declared below it will apply to that User-Agent.\n");
-                        defaultValue.push("# To hide a file or folder from the User-Agent, type the word 'Disallow' followed by a semi-colon.\n");
-                        defaultValue.push("\n");
-                        defaultValue.push("# Below is the default recommended robots.txt content for Umbraco v8.\n");
-                        defaultValue.push("\n");
-                        defaultValue.push("User-Agent: *\n");
-                        defaultValue.push("\n");
-                        defaultValue.push("Disallow: /bin/\n");
-                        defaultValue.push("Disallow: /config/\n");
-                        defaultValue.push("Disallow: /umbraco/\n");
-                        defaultValue.push("Disallow: /views/\n");
 
-                        vm.data.FileContents = defaultValue.join("");
+                        vm.data.FileContents = ""
+                            + "# To add a comment to the file, start the line with the # character.\n"
+                            + "# User-Agent is used to target a particular web crawler.\n"
+                            + "# Any rules declared below it will apply to that User-Agent.\n"
+                            + "# To hide a file or folder from the User-Agent, type the word 'Disallow' followed by a semi-colon.\n"
+                            + "\n"
+                            + "User-Agent: *\n"
+                            + "\n"
+                            + "Disallow: /bin/\n"
+                            + "Disallow: /config/\n"
+                            + "Disallow: /umbraco/\n"
+                            + "Disallow: /views/";
                     }
 
                     if (vm.editor !== undefined) {
@@ -87,11 +54,6 @@ angular.module("umbraco")
                         notificationsService.error("Validation Error", "There were validation errors");
                     }
                 });
-            }
-
-            function reloadData() {
-                vm.loading = false;
-                getData();
             }
 
             function initEditor() {
