@@ -7,11 +7,13 @@ REM     %4 is ProjectDir
 REM	/S (Copies directories and subdirectories except empty ones)
 REM /Y (Suppresses prompting to confirm you want to overwrite an existing destination file.)
 
-REM Copy bin folder to website folder
-xcopy /s /y "%1" "{YOUR-WEBSITE-LOCATION}\bin\"
+SET WEBSITE_PATH={YOUR-WEBSITE-LOCATION}
 
-REM Copy pdb
-xcopy /s /y "%2%3.pdb" "{YOUR-WEBSITE-LOCATION}\bin\"
+REM Copy the compiled code (*.dll) to website folder
+XCOPY /S /Y "%1" "%WEBSITE_PATH%\bin\"
+
+REM Copy the debug files (*.pdb)
+XCOPY /S /Y "%2%3.pdb" "%WEBSITE_PATH%\bin\"
 
 REM Copy package front-end files
-xcopy /s /y "%4Web\UI\*.*" "{YOUR-WEBSITE-LOCATION}"
+XCOPY /S /Y "%4Web\UI\*.*" "%WEBSITE_PATH%"
