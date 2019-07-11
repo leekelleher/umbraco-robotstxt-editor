@@ -42,7 +42,7 @@ Have a question?
 
 ## License
 
-Copyright &copy; 2019 Our Umbraco and other contributors<br>
+Copyright &copy; 2019 Umbraco Community and other contributors<br>
 Copyright &copy; 2009 Lee Kelleher
 
 Licensed under the [MIT License](LICENSE.md)
