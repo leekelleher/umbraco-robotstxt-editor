@@ -1,24 +1,24 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <umbPackage>
-	<files />
 	<info>
 		<package>
-			<name>Robots.txt Editor</name>
-			<version>4.0</version>
-			<license url="https://opensource.org/licenses/MIT">MIT license</license>
-			<url>http://our.umbraco.org/projects/developer-tools/robotstxt-editor</url>
-			<requirements>
-				<major>8</major>
+			<name></name>
+			<version>0.0.0</version>
+			<license url=""></license>
+			<url></url>
+			<requirements type="strict">
+				<major>0</major>
 				<minor>0</minor>
 				<patch>0</patch>
 			</requirements>
 		</package>
 		<author>
-			<name>Lee Kelleher</name>
-			<website>https://leekelleher.com</website>
+			<name></name>
+			<website></website>
 		</author>
 		<readme><![CDATA[]]></readme>
 	</info>
+
 	<DocumentTypes />
 	<Templates />
 	<Stylesheets />
@@ -26,5 +26,11 @@
 	<DictionaryItems />
 	<Languages />
 	<DataTypes />
+
 	<Actions />
+
+	<control />
+
+	<files />
+
 </umbPackage>
