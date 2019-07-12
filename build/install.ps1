@@ -1,11 +1,11 @@
 param($installPath, $toolsPath, $package, $project)
 
 $appPluginsFolder = $project.ProjectItems | Where-Object { $_.Name -eq "App_Plugins" }
-$propertyListFolder = $appPluginsFolder.ProjectItems | Where-Object { $_.Name -eq "PropertyList" }
+$robotsPluginFolder = $appPluginsFolder.ProjectItems | Where-Object { $_.Name -eq "RobotsTxtEditor" }
 
-if (!$propertyListFolder)
+if (!$robotsPluginFolder)
 {
-	$newPackageFiles = "$installPath\Content\App_Plugins\PropertyList"
+	$newPackageFiles = "$installPath\Content\App_Plugins\RobotsTxtEditor"
 
 	$projFile = Get-Item ($project.FullName)
 	$projDirectory = $projFile.DirectoryName
@@ -13,7 +13,7 @@ if (!$propertyListFolder)
 	$projectPathExists = Test-Path $projectPath
 
 	if ($projectPathExists) {
-		Write-Host "Updating Property List App_Plugin files using PS as they have been excluded from the project"
+		Write-Host "Updating RobotsTxtEditor App_Plugin files using PS as they have been excluded from the project"
 		Copy-Item $newPackageFiles $projectPath -Recurse -Force
 	}
 }

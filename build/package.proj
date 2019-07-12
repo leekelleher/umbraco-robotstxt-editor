@@ -16,25 +16,25 @@
 
 	<!-- SHARED PROPERTIES -->
 	<PropertyGroup>
-		<ProjectName>Our.Umbraco.PropertyList</ProjectName>
-		<PackageName>Property List</PackageName>
-		<MinUmbracoVersion>7.6.0</MinUmbracoVersion>
-		<Readme>Property List is a property editor for making repeatable lists of a datatype for Umbraco 7.6+</Readme>
-		<AuthorName>Lee Kelleher, Matt Brailsford</AuthorName>
-		<AuthorUrl>https://github.com/umco/umbraco-property-list/graphs/contributors</AuthorUrl>
+		<ProjectName>Our.Umbraco.RobotsTxtEditor</ProjectName>
+		<PackageName>Robots.txt Editor</PackageName>
+		<MinUmbracoVersion>8.0.0</MinUmbracoVersion>
+		<Readme>An Umbraco package to edit your robots.txt file</Readme>
+		<AuthorName>Emma Burstow, Lotte Pitcher, Mike Masey, Lee Kelleher</AuthorName>
+		<AuthorUrl>https://github.com/leekelleher/umbraco-robotstxt-editor/graphs/contributors</AuthorUrl>
 		<PackageLicenseName>MIT license</PackageLicenseName>
 		<PackageLicenseUrl>http://opensource.org/licenses/MIT</PackageLicenseUrl>
-		<ProjectUrl>https://github.com/umco/umbraco-property-list</ProjectUrl>
+		<ProjectUrl>https://github.com/leekelleher/umbraco-robotstxt-editor</ProjectUrl>
 	</PropertyGroup>
 
 	<!-- NUGET ONLY PROPERTIES -->
 	<PropertyGroup>
-		<PackageId>Our.Umbraco.PropertyList</PackageId>
-		<NuGetPackageName>Property List for Umbraco</NuGetPackageName>
-		<Copyright>Copyright &#169; 2017 UMCO, Our Umbraco and other contributors</Copyright>
-		<Owners>Lee Kelleher, Matt Brailsford</Owners>
-		<IconUrl>https://raw.githubusercontent.com/umco/umbraco-property-list/master/docs/img/logo.png</IconUrl>
-		<Tags>umbraco list editor</Tags>
+		<PackageId>Our.Umbraco.RobotsTxtEditor</PackageId>
+		<NuGetPackageName>Robots.txt Editor for Umbraco</NuGetPackageName>
+		<Copyright>Copyright &#169; 2019 Umbraco Community and other contributors</Copyright>
+		<Owners>Lee Kelleher</Owners>
+		<IconUrl>https://our.umbraco.com/media/wiki/5402/634594754183994000_icon.png</IconUrl>
+		<Tags>umbraco robots.txt editor</Tags>
 		<Language>en-GB</Language>
 		<RequireLicenseAcceptance>false</RequireLicenseAcceptance>
 	</PropertyGroup>
