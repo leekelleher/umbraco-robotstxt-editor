@@ -6,6 +6,12 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Our.Umbraco.RobotsTxtEditor", "Our.Umbraco.RobotsTxtEditor\Our.Umbraco.RobotsTxtEditor.csproj", "{DBA79B9A-0CBF-447A-A79D-BC2FFCDDC413}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{39D8DA06-6EEE-4FC2-9705-5D5B58562F91}"
+	ProjectSection(SolutionItems) = preProject
+		..\CONTRIBUTING.md = ..\CONTRIBUTING.md
+		..\GETTINGSTARTED.md = ..\GETTINGSTARTED.md
+		..\LICENSE.md = ..\LICENSE.md
+		..\README.md = ..\README.md
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build Scripts", "Build Scripts", "{4528ACE3-4E57-4A4A-ADAC-205B485938BE}"
 	ProjectSection(SolutionItems) = preProject

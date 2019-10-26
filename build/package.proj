@@ -18,7 +18,7 @@
 	<PropertyGroup>
 		<ProjectName>Our.Umbraco.RobotsTxtEditor</ProjectName>
 		<PackageName>Robots.txt Editor</PackageName>
-		<MinUmbracoVersion>8.0.0</MinUmbracoVersion>
+		<MinUmbracoVersion>8.2.0</MinUmbracoVersion>
 		<Readme>An Umbraco package to edit your robots.txt file</Readme>
 		<AuthorName>Emma Burstow, Lotte Pitcher, Mike Masey, Lee Kelleher</AuthorName>
 		<AuthorUrl>https://github.com/leekelleher/umbraco-robotstxt-editor/graphs/contributors</AuthorUrl>

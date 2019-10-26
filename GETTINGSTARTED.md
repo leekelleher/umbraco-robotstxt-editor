@@ -2,7 +2,7 @@
 
 Only code related to the package is in this repository, so you are going to need an Umbraco website of your own to test your changes. After cloning this repository the suggested approach for development is:
 
-1. Create a new Umbraco website (v8.1.0) with the starter kit on your local machine and go through the install process (or use any existing website, so long as it is the correct version of Umbraco)
+1. Create a new Umbraco website (v8.2.0) with the starter kit on your local machine and go through the install process (or use any existing website, so long as it is the correct version of Umbraco)
    
 2. In your cloned version of this repository, copy `src/PostBuildEvents.bat` into the `src/Our.Umbraco.RobotsTxtEditor/` folder
 
