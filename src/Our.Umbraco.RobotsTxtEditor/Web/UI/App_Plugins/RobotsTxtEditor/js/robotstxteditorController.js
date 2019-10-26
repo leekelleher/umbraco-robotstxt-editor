@@ -1,6 +1,6 @@
 angular.module("umbraco")
     .controller("RobotsTxtEditorController",
-        function ($scope, $routeParams, $timeout, robotsTxtEditorResource, notificationsService, angularHelper) {
+        function (robotsTxtEditorResource, notificationsService) {
 
             var vm = this;
 
@@ -33,6 +33,8 @@ angular.module("umbraco")
 
                     if (vm.editor !== undefined) {
                         vm.editor.setValue(vm.data.FileContents);
+                        vm.editor.navigateFileEnd();
+                        vm.editor.focus();
                     }
 
                     vm.loading = false;
@@ -49,7 +51,7 @@ angular.module("umbraco")
                         notificationsService.success("Saved", "Text saved to Robots.txt");
                     } else {
                         vm.errors = data.ErrorMessages;
-                        notificationsService.error("Validation Error", "There were validation errors");
+                        notificationsService.error("Validation Error", "Robots.txt has not been updated");
                     }
                 });
             }
@@ -65,36 +67,8 @@ angular.module("umbraco")
                     },
                     onLoad: function (_editor) {
                         vm.editor = _editor;
-
-                        // initial cursor placement
-                        // Keep cursor in name field if we are create a new script
-                        // else set the cursor at the bottom of the code editor
-                        if (!$routeParams.create) {
-                            $timeout(function () {
-                                vm.editor.navigateFileEnd();
-                                vm.editor.focus();
-                            });
-                        }
-
-                        vm.editor.on("change", changeAceEditor);
                     }
                 };
-
-                function changeAceEditor() {
-                    setFormState("dirty");
-                }
-
-                function setFormState(state) {
-                    // get the current form
-                    var currentForm = angularHelper.getCurrentForm($scope);
-
-                    // set state
-                    if (state === "dirty") {
-                        currentForm.$setDirty();
-                    } else if (state === "pristine") {
-                        currentForm.$setPristine();
-                    }
-                }
             }
 
             initEditor();
