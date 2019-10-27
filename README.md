@@ -22,6 +22,7 @@ Anyone and everyone is welcome to contribute. Please take a moment to review the
 * [Bug reports](CONTRIBUTING.md#bugs)
 * [Feature requests](CONTRIBUTING.md#features)
 * [Pull requests](CONTRIBUTING.md#pull-requests)
+* [Getting started](GETTINGSTARTED.md)
 
 
 ## Contact
@@ -41,7 +42,12 @@ Have a question?
 
 ## License
 
-Copyright &copy; 2019 Our Umbraco and other contributors<br>
+Copyright &copy; 2019 Umbraco Community and other contributors<br>
 Copyright &copy; 2009 Lee Kelleher
 
 Licensed under the [MIT License](LICENSE.md)
+
+
+#### Logo
+
+The package logo uses the [Robot](https://thenounproject.com/term/robot/826063/) (by [Oksana Latysheva](https://thenounproject.com/latyshevaoksana/)) icon from the [Noun Project](https://thenounproject.com), licensed under [CC BY 3.0 US](https://creativecommons.org/licenses/by/3.0/us/).
