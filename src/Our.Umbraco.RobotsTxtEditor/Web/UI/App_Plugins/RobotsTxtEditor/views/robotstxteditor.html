@@ -1,0 +1,48 @@
+<div class="umb-robotstxteditor" ng-controller="RobotsTxtEditorController as vm">
+
+    <umb-load-indicator ng-show="vm.loading"></umb-load-indicator>
+
+    <div ng-show="!vm.loading">
+
+            <umb-box>
+                <umb-box-content>
+
+                    <h3 class="bold">Robots.txt Editor</h3>
+
+                    <p class="alert" ng-show="!vm.data.FileExists">
+                        You don't currently have a robots.txt file.
+                        <br/>
+                        The editor below has been preset with the default recommended robots.txt content for Umbraco v8.
+                    </p>
+
+                    <p>For more information about the robots.txt file, please visit <a href="http://www.robotstxt.org/robotstxt.html" target="_blank" rel="noopener noreferrer" class="btn-link -underline">www.robotstxt.org</a>.</p>
+
+                    <div ng-if="vm.errors.length > 0" class="alert alert-block alert-error">
+                        <p class="bold">Please fix the following validation errors</p>
+                        <ul>
+                            <li ng-repeat="error in vm.errors">Line {{error.First}}: "{{error.Second}}" is not valid.</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-top: 15px; margin-bottom: 30px;">
+                        <div umb-ace-editor="vm.aceOption"
+                             class="ace-editor"
+                             model="vm.data.FileContents">
+                        </div>
+                    </div>
+
+                    <div>
+                        <umb-button type="button"
+                                    label="{{vm.data.FileExists ? 'Update Robots.txt' : 'Create Robots.txt'}}"
+                                    button-style="success"
+                                    size="xs"
+                                    action="vm.saveData()">
+                        </umb-button>
+                    </div>
+
+                </umb-box-content>
+            </umb-box>
+
+    </div>
+
+</div>

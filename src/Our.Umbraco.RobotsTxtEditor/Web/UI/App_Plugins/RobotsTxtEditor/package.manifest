@@ -1,0 +1,22 @@
+﻿{
+    // array of files we want to inject into the application
+    "javascript": [
+        "~/App_Plugins/RobotsTxtEditor/js/robotstxteditorController.js",
+        "~/App_Plugins/RobotsTxtEditor/js/robotstxteditorResource.js"
+    ],
+
+    "css": [
+        "~/App_Plugins/RobotsTxtEditor/css/robotstxteditor.css"
+    ],
+
+    // Robots Txt Editor dashboard
+    "dashboards":  [
+        {
+            "alias": "robotsTxtEditor",
+            "name":  "Robots.txt",
+            "view":  "/App_Plugins/RobotsTxtEditor/views/robotstxteditor.html",
+            "sections":  [ "settings" ],
+            "weight": 50
+        }
+    ]
+}

@@ -1,3 +1,4 @@
+Copyright &copy; 2019 Our Umbraco and other contributors<br>
 Copyright &copy; 2009 Lee Kelleher
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
