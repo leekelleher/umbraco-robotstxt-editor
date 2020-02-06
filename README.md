@@ -1,14 +1,15 @@
 # Robots.txt Editor for Umbraco
 
 [![Our Umbraco project page](https://img.shields.io/badge/our-umbraco-orange.svg)](https://our.umbraco.org/projects/developer-tools/robotstxt-editor/)
+[![NuGet release](https://img.shields.io/nuget/v/Our.Umbraco.RobotsTxtEditor.svg)](https://www.nuget.org/packages/Our.Umbraco.RobotsTxtEditor/) 
 
 The Robots.txt Editor for Umbraco adds a tree node to the developer section, which allows access to your Robots.txt file from the root of your website.
 
 If you do not have an existing Robots.txt, then one will be created for you. The editor contains basic validation for the Robots.txt protocol.
 
-## Current Status: Support for Umbraco v8
+## Umbraco v8
 
-Following on from [issue #4](https://github.com/leekelleher/umbraco-robotstxt-editor/issues/4), work has started to re-develop Robots.txt Editor for Umbraco v8.
+Robots.txt Editor has been re-developed for Umbraco v8.
 
 > For historical purposes, you can still view the [`legacy` branch](https://github.com/leekelleher/umbraco-robotstxt-editor/tree/legacy) of this repository, if you wish to reference the original source-code.
 
