@@ -1,28 +1,41 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Web.Http;
-using System.Web.UI;
 using Our.Umbraco.RobotsTxtEditor.Models;
+
+#if NET472
+using System.Web.Http;
 using Umbraco.Core;
 using Umbraco.Core.IO;
 using Umbraco.Web.Mvc;
 using Umbraco.Web.WebApi;
 using Umbraco.Web.WebApi.Filters;
-
+#elif NET5_0_OR_GREATER
+using Umbraco.Cms.Web.BackOffice.Controllers;
+using Microsoft.AspNetCore.Mvc;
+using Umbraco.Cms.Web.Common.Attributes;
+using Umbraco.Extensions;
+#endif
 namespace Our.Umbraco.RobotsTxtEditor.Controllers
 {
     //api route backoffice/RobotsTxtEditor/RobotsTxtEditorApi/GetRobotsText
     [PluginController("RobotsTxtEditor")]
+#if NET472
     [UmbracoApplicationAuthorize(Constants.Applications.Settings)]
+#endif
     public class RobotsTxtEditorApiController : UmbracoAuthorizedApiController
     {
         [HttpGet]
         public RobotsTxtEditorModel GetRobotsText()
         {
-            var filePath = IOHelper.MapPath("~/robots.txt");
 
-            if (File.Exists(filePath) == false)
+            var filePath = string.Empty;
+#if NET472
+            filePath = IOHelper.MapPath("~/robots.txt");
+#elif NET5_0_OR_GREATER
+            filePath = AppContext.BaseDirectory + "/robots.txt";
+#endif
+            
+            if (System.IO.File.Exists(filePath) == false)
             {
                 return new RobotsTxtEditorModel
                 {
@@ -30,7 +43,7 @@ namespace Our.Umbraco.RobotsTxtEditor.Controllers
                 };
             }
 
-            using (var reader = File.OpenText(filePath))
+            using (var reader = System.IO.File.OpenText(filePath))
             {
                 return new RobotsTxtEditorModel
                 {
@@ -44,7 +57,12 @@ namespace Our.Umbraco.RobotsTxtEditor.Controllers
         public RobotsTxtResponseModel SaveRobotsText(RobotsTxtEditorModel vm)
         {
             //do something that would save it here
-            var filePath = IOHelper.MapPath("~/robots.txt");
+            var filePath = string.Empty;
+#if NET472
+            filePath = IOHelper.MapPath("~/robots.txt");
+#elif NET5_0_OR_GREATER
+            filePath = AppContext.BaseDirectory + "/robots.txt";
+#endif
 
             var contents = vm.FileContents;
 
@@ -53,7 +71,7 @@ namespace Our.Umbraco.RobotsTxtEditor.Controllers
             if (errorMessages.Count == 0)
             {
                 //create the file and then write to it
-                using (var sw = File.CreateText(filePath))
+                using (var sw = System.IO.File.CreateText(filePath))
                 {
                     sw.WriteLine(contents);
                 }
@@ -89,7 +107,7 @@ namespace Our.Umbraco.RobotsTxtEditor.Controllers
                     (!checkLine.StartsWith("SITEMAP")) &&
                     (!checkLine.StartsWith("CRAWL-DELAY")) &&
                     (!checkLine.StartsWith("REQUEST-RATE")) &&
-                    (!checkLine.StartsWith("VISIT-TIME")) &&
+                    (!checkLine.StartsWith("VISIT-TIME")) && 
                     (!checkLine.IsNullOrWhiteSpace()))
                 {
                     // invalid command

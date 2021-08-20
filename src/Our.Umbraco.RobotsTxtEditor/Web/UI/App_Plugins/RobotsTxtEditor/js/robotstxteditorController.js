@@ -15,9 +15,8 @@ angular.module("umbraco")
                 robotsTxtEditorResource.get().then(function (response) {
                     vm.data = response.data;
 
-                    if (vm.data.FileExists === false) {
-
-                        vm.data.FileContents = ""
+                    if (vm.data.fileExists === false) {
+                        vm.data.fileContents = ""
                             + "# To add a comment to the file, start the line with the # character.\n"
                             + "# User-Agent is used to target a particular web crawler.\n"
                             + "# Any rules declared below it will apply to that User-Agent.\n"
@@ -32,7 +31,7 @@ angular.module("umbraco")
                     }
 
                     if (vm.editor !== undefined) {
-                        vm.editor.setValue(vm.data.FileContents);
+                        vm.editor.setValue(vm.data.fileContents);
                         vm.editor.navigateFileEnd();
                         vm.editor.focus();
                     }
@@ -44,13 +43,12 @@ angular.module("umbraco")
             function saveData() {
                 robotsTxtEditorResource.save(vm.data).then(function (response) {
                     var data = response.data;
-
-                    if (data.Success === true) {
-                        vm.data.FileExists = true;
+                    if (data.success === true) {
+                        vm.data.fileExists = true;
                         vm.errors = [];
                         notificationsService.success("Saved", "Text saved to Robots.txt");
                     } else {
-                        vm.errors = data.ErrorMessages;
+                        vm.errors = data.errorMessages;
                         notificationsService.error("Validation Error", "Robots.txt has not been updated");
                     }
                 });
@@ -67,11 +65,10 @@ angular.module("umbraco")
                     },
                     onLoad: function (_editor) {
                         vm.editor = _editor;
+                        vm.getData();
                     }
                 };
             }
 
             initEditor();
-            vm.getData();
-
         });
