@@ -33,6 +33,6 @@
 	</Target>
 
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
-	  <Exec Command="if EXIST &quot;$(ProjectDir)PostBuildEvents.bat&quot; (&#xD;&#xA;&quot;$(ProjectDir)PostBuildEvents.bat&quot; &quot;$(ProjectName)&quot; &quot;$(ProjectDir)&quot;&#xD;&#xA;)" />
+	  <Exec Command="if EXIST &quot;$(ProjectDir)PostBuildEvents.bat&quot; (&#xD;&#xA;&quot;$(ProjectDir)PostBuildEvents.bat&quot; &quot;$(ProjectName)&quot; &quot;$(ProjectDir)&quot;&#xD;&#xA;)&#xD;&#xA;xcopy /y /i /e &quot;$(ProjectDir)Web\UI\App_Plugins&quot; &quot;$(SolutionDir)RobotsTxtEditor.v9.TestSite\App_Plugins&quot;&#xD;&#xA;xcopy /y /i /e &quot;$(ProjectDir)Web\UI\App_Plugins&quot; &quot;$(SolutionDir)RobotsTxtEditor.v8.TestSite\App_Plugins&quot;&#xD;&#xA;" />
 	</Target>
 </Project>
