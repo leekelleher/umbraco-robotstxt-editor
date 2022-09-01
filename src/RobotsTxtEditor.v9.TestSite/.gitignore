@@ -34,9 +34,9 @@ build/tools/vswhere*
 !**/App_Data/[Pp]ackages/
 
 # Exclude files form the Sample Projects
-src/RobotsTxtEditor.v[89].TestSite/App_Plugins/RobotsTxtEditor
-src/RobotsTxtEditor.v8.TestSite/Umbraco
-src/RobotsTxtEditor.v9.TestSite/wwwroot/umbraco
-src/RobotsTxtEditor.v9.TestSite/umbraco/*
-src/RobotsTxtEditor.v9.TestSite/umbraco/Data/Temp
-!src/RobotsTxtEditor.v9.TestSite/umbraco/Data/
+src/RobotsTxtEditor.v[89].Website/App_Plugins/RobotsTxtEditor
+src/RobotsTxtEditor.v8.Website/Umbraco
+src/RobotsTxtEditor.v9.Website/wwwroot/umbraco
+src/RobotsTxtEditor.v9.Website/umbraco/*
+src/RobotsTxtEditor.v9.Website/umbraco/Data/Temp
+!src/RobotsTxtEditor.v9.Website/umbraco/Data/
